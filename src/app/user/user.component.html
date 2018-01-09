@@ -1,0 +1,18 @@
+
+
+search user
+<input list="users">
+<datalist id="users">
+  <option *ngFor="let users of userdata" value="{{users.id}}">
+</datalist>
+<ul>
+  <li *ngFor="let users of userdata">
+    <label [class.spark]="users.id == 9" appTest routerLink="/user/{{users.id}}" (click)=selectedData(users)>{{users.id}}</label><br>
+    <div>{{users.email | mail}}</div>
+
+  </li>
+</ul>
+
+<app-selecteduser [selected]= "selecteduser" ></app-selecteduser>
+
+
