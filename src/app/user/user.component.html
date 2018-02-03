@@ -5,8 +5,9 @@ search user
 <datalist id="users">
   <option *ngFor="let users of userdata" value="{{users.id}}">
 </datalist>
+<input type="text" placeholder="search here" [(ngModel)]="searchKey">
 <ul>
-  <li *ngFor="let users of userdata">
+  <li *ngFor="let users of userdata | filter:searchKey">
     <label [class.spark]="users.id == 9" appTest routerLink="/user/{{users.id}}" (click)=selectedData(users)>{{users.id}}</label><br>
     <div>{{users.email | mail}}</div>
 
@@ -14,5 +15,4 @@ search user
 </ul>
 
 <app-selecteduser [selected]= "selecteduser" ></app-selecteduser>
-
-
+ 

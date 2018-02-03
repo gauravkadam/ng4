@@ -1,3 +1,10 @@
-<p>
-  hello works!
-</p>
+<form class="container" novalidate #userForm="ngForm" (ngSubmit)="submit(userForm.value)">
+  <input type="text" name="username" placeholder="username" #name="ngModel" required ngModel>
+  <br>
+  <br>
+  <div *ngIf="name.errors?.required && name.touched">enter name</div>
+  <input type="password" name="password" placeholder="password" required ngModel>
+    <br>
+  <br>
+  <input type="submit" value="Submit">
+</form>

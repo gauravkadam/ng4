@@ -10,12 +10,17 @@ import { UserComponent } from './user/user.component';
 import { UserService } from './user.service';
 import { SelecteduserComponent } from './selecteduser/selecteduser.component';
 import { TestDirective } from './test.directive';
-import { GenderPipe } from './gender.pipe'
+import { GenderPipe } from './gender.pipe';
+import { FormsModule } from '@angular/forms';
+import { FilterPipe } from './filter.pipe';
+
+
 
 
 const routes: Routes = [
   { path: 'hello', component: HelloComponent },
   { path: 'home', component: HomeComponent },
+  { path: 'lazy', loadChildren: './lazy.module#LazyModule' },
   { path: 'user/:id', component: SelecteduserComponent }, 
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: '**', component: HelloComponent }
@@ -30,11 +35,14 @@ const routes: Routes = [
     UserComponent,
     SelecteduserComponent,
     TestDirective,
-    GenderPipe
+    GenderPipe,
+    FilterPipe,
+
   ],
   imports: [
     BrowserModule,
     HttpModule,
+    FormsModule,
     RouterModule.forRoot(routes)
   ],
   providers: [UserService],

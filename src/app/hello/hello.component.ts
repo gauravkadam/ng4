@@ -12,4 +12,7 @@ export class HelloComponent implements OnInit {
   ngOnInit() {
   }
 
+submit(data){
+  console.log(data);
+}
 }
