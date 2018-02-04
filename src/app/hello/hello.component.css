@@ -1,0 +1,24 @@
+.login{
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    box-sizing: border-box;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 20%;
+    padding: 10px;
+    transform: translate(-50%, -50%);
+border-radius: 5px;
+}
+
+h2{
+    color: white;   
+    text-align: center;
+}
+
+.form-control{
+    width: 20%;
+}
+
+span{
+    color: white;
+}
